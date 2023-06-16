@@ -1,50 +1,74 @@
-<div class="container">
-    <h3>Proyecto/NombreProyecto</h3>
-    <div class="d-flex justify-content-between">
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened >
+          <mat-nav-list>
+            <a mat-list-item >Tareas</a>
+            <a mat-list-item >Hitos</a>
+          </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="container">
+      <h3>Proyecto/NombreProyecto</h3>
+      <div class="d-flex justify-content-between">
         <h2>Tablero</h2>
         <button mat-raised-button color="primary" (click)="onCrear()">Crear</button>
-    </div>
-    <div class="container ">
-        <div class="row">
+      </div>
+      <div class="container ">
+        <div cdkDropListGroup class="row">
             <div class="col">
-                <p>Pendientes</p>
-                <mat-card>
-                    <mat-card-header>
-                        <mat-card-title>Actions Buttons</mat-card-title>
-                        <mat-card-subtitle>Start</mat-card-subtitle>
-                    </mat-card-header>
-                    <mat-card-actions>
-                        <button mat-button>LIKE</button>
-                        <button mat-button>SHARE</button>
-                    </mat-card-actions>
-                </mat-card>
+              <h2>Pendiente</h2>
+              <div
+                cdkDropList
+                [cdkDropListData]="todo"
+                class="example-list"
+                (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let item of todo" cdkDrag>
+                  <div class="card" style="width: 10rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">{{item.nombre}}</h5>
+                      <p class="card-text">{{item.descripcion}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          
             <div class="col">
-                <p>En progreso</p>
-                <mat-card>
-                    <mat-card-header>
-                      <mat-card-title>Actions Buttons</mat-card-title>
-                      <mat-card-subtitle>Start</mat-card-subtitle>
-                    </mat-card-header>
-                    <mat-card-actions>
-                      <button mat-button>LIKE</button>
-                      <button mat-button>SHARE</button>
-                    </mat-card-actions>
-                  </mat-card>
+              <h2>En progreso</h2>
+              <div class="shadow-none p-3 mb-5 bg-body-tertiary rounded"
+                cdkDropList
+                [cdkDropListData]="inProgres"
+                class="example-list"
+                (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let item of inProgres" cdkDrag>
+                    <div class="card" style="width: 10rem;">
+                      <div class="card-body">
+                        <h5 class="card-title">{{item.nombre}}</h5>
+                        <p class="card-text">{{item.descripcion}}</p>
+                      </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          
             <div class="col">
-                <p>Completada</p>
-                <mat-card>
-                    <mat-card-header>
-                      <mat-card-title>Actions Buttons</mat-card-title>
-                      <mat-card-subtitle>Start</mat-card-subtitle>
-                    </mat-card-header>
-                    <mat-card-actions>
-                      <button mat-button>LIKE</button>
-                      <button mat-button>SHARE</button>
-                    </mat-card-actions>
-                  </mat-card>
+              <h2>Finalizado</h2>
+              <div
+                cdkDropList
+                [cdkDropListData]="done"
+                class="example-list"
+                (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let item of done" cdkDrag>
+                    <div class="card" style="width: 10rem;">
+                      <div class="card-body">
+                        <h5 class="card-title">{{item.nombre}}</h5>
+                        <p class="card-text">{{item.descripcion}}</p>
+                      </div>
+                  </div>
+                </div>
+              </div>
             </div>
         </div>
+      </div>
     </div>
-</div>
+  </mat-drawer-content>
+</mat-drawer-container>

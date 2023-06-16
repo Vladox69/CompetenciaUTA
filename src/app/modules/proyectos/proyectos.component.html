@@ -1,12 +1,21 @@
-<mat-drawer-container class="example-container">
-    <mat-drawer mode="side" opened >
-            <mat-nav-list>
-              <a mat-list-item routerLink="tareas">Tareas</a>
-              <a mat-list-item routerLink="/proyectos">Proyectos</a>
-              <a mat-list-item routerLink="/hitos">Hitos</a>
-            </mat-nav-list>
-    </mat-drawer>
-    <mat-drawer-content>
-       <router-outlet/>
-    </mat-drawer-content>
-</mat-drawer-container>
+<div class="container">
+  <mat-selection-list>
+    <mat-list-item>
+      <div class="d-flex justify-content-around">
+        <span>Nombre</span><span>Descripcion</span><span>Fecha Inicio</span><span>Fecha Fin</span>
+      </div>
+    </mat-list-item>
+    <mat-list-item *ngFor="let item of projects">
+      <div class="d-flex justify-content-around" (click)="onClickProject(item.id)">
+        <span>{{item.nombre}}</span>
+        <span>{{item.descripcion}}</span>
+        <span>{{item.fecInicio}}</span>
+        <span>{{item.fecFin}}</span>
+        <span>
+          <button mat-icon-button><mat-icon>edit</mat-icon></button>
+          <button mat-icon-button><mat-icon>delete</mat-icon></button>
+        </span>
+      </div>
+    </mat-list-item>
+  </mat-selection-list>
+</div>

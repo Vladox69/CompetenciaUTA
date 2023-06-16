@@ -1,34 +1,38 @@
+
 <form action=" " class="container mt-2 mb-2">
- <div class="d-flex justify-content-between">
-  <h2>Crear tarea</h2>
-  <div>
-    <mat-icon>close</mat-icon>
+  <div class="d-flex justify-content-between">
+   <h2>Crear tarea</h2>
+   <div>
+     <button mat-icon-button ><mat-icon>close</mat-icon></button>
+   </div>
   </div>
- </div>
-  <div class="mt-1">
-    <label for="cedula" class="form-label">Nombre</label>
-    <input type="text" class="form-control" id="cedula" maxlength="10" formControlName="cedula">
-  </div>
-  <div class="mt-1">
-    <label for="cedula" class="form-label">Descripcion</label>
-    <input type="text" class="form-control" id="cedula" maxlength="10" formControlName="cedula">
-  </div>
-  <div class="mt-1">
-    <label for="producto" class="form-label">Estado</label>
-    <select class="form-select" id="floatingSelect" aria-label="Floating label select example"
-      formControlName="producto">
-      <option value="1"> Pendiente </option>
-      <option value="1"> En progreso </option>
-      <option value="1"> Finalizado </option>
-    </select>
-  </div>
-  <div class="mt-1">
-    <label for="">Fecha inicio</label>
-    <input type="date" class="form-control">
-  </div>
-  <div class="mt-1">
-    <label for="">Fecha fin</label>
-    <input type="date" class="form-control">
-  </div>
-  <button class="mt-2" mat-raised-button color="primary">Primary</button>
-</form>
+   <div class="mt-1">
+     <label for="cedula" class="form-label">Nombre</label>
+     <input type="text" class="form-control" id="cedula" maxlength="10" formControlName="cedula">
+   </div>
+   <div class="mt-1">
+     <label for="cedula" class="form-label">Descripcion</label>
+     <input type="text" class="form-control" id="cedula" maxlength="10" formControlName="cedula">
+   </div>
+   <div class="mt-1">
+     <label for="producto" class="form-label">Estado</label>
+     <select class="form-select" id="floatingSelect" aria-label="Floating label select example"
+       formControlName="producto">
+       <option value="1"> Pendiente </option>
+       <option value="1"> En progreso </option>
+       <option value="1"> Finalizado </option>
+     </select>
+   </div>
+   <div class="mt-1">
+     <label for="">Fecha inicio</label>
+     <input type="date" class="form-control">
+   </div>
+   <div class="mt-1">
+     <label for="">Fecha fin</label>
+     <input type="date" class="form-control">
+   </div>
+   <div class="d-flex justify-content-end">
+     <button class="mt-2 me-1" mat-raised-button color="warn">Cancel</button>
+     <button class="mt-2" mat-raised-button color="primary">Primary</button>
+   </div>
+ </form>
