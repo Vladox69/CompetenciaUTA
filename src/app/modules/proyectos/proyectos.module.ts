@@ -6,6 +6,7 @@ import { ProyectosComponent } from './proyectos.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { SharedModule } from '../shared/shared.module';
 import { TareasComponent } from './tareas/tareas.component';
+import { TareasFormComponent } from './tareas-form/tareas-form.component';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { TareasComponent } from './tareas/tareas.component';
     ProyectosComponent,
     PrincipalComponent,
     TareasComponent,
+    TareasFormComponent,
   ],
   imports: [
     CommonModule,

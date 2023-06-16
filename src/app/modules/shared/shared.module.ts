@@ -7,7 +7,12 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 
 
 @NgModule({
@@ -22,7 +27,13 @@ import {MatCardModule} from '@angular/material/card';
     MatButtonModule,
     MatSidenavModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    NgbModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ]
 })
 export class SharedModule { }
